@@ -7,6 +7,7 @@ export default function App() {
   const [list,setlist]=useState(['item1','item2'])
   const additem=()=>{
     console.log(getinputtext);
+    setlist([...list,getinputtext])
     setinputtext('')
 
   }
@@ -27,9 +28,12 @@ export default function App() {
       <View>
         <Text style={{ fontSize: 26 }}>{getinputtext}</Text>
       </View>
-    <ScrollView>
+      <View>
+      <ScrollView>
       {list.map((item)=> <Text> {item} </Text> )}
     </ScrollView>
+      </View>
+    
 
     </View>
   );

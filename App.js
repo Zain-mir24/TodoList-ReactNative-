@@ -28,13 +28,9 @@ export default function App() {
         <Text style={{ fontSize: 26 }}>{getinputtext}</Text>
       </View>
     <ScrollView>
-      {list.map((item)=>{
-        <Text>
-          {item}
-        </Text>
-      })}
+      {list.map((item)=> <Text> {item} </Text> )}
     </ScrollView>
-      <StatusBar style="auto" />
+
     </View>
   );
 }

@@ -4,6 +4,10 @@ import { StyleSheet, Text, Button, TextInput, View } from "react-native";
 
 export default function App() {
   const [getinputtext, setinputtext] = useState("DummyText");
+  const additem=()=>{
+    console.log("running")
+
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}> My todo app</Text>
@@ -14,9 +18,7 @@ export default function App() {
           onChangeText={text=>setinputtext(text)}
         ></TextInput>
         <Button
-        onPress={()=>{
-          
-        }}
+        onPress={additem}
          title="add" />
       </View>
       <View>

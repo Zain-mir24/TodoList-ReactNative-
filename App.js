@@ -5,6 +5,7 @@ import { StyleSheet, Text, Button, TextInput, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
+      <Text style={styles.title}> My todo app</Text>
       <View style={styles.inputcontainer}>
         <TextInput style={styles.textinput}></TextInput>
         <Button title="add" />
@@ -16,6 +17,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  title:{
+    fontSize:50
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",

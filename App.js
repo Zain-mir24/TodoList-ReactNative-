@@ -1,16 +1,22 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, Button, TextInput, View ,ScrollView} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  Button,
+  TextInput,
+  View,
+  ScrollView,
+} from "react-native";
 
 export default function App() {
-  const [getinputtext, setinputtext] = useState("DummyText");
-  const [list,setlist]=useState(['item1','item2'])
-  const additem=()=>{
+  const [getinputtext, setinputtext] = useState('');
+  const [list, setlist] = useState(["item1", "item2"]);
+  const additem = () => {
     console.log(getinputtext);
-    setlist([...list,getinputtext])
-    setinputtext('')
-
-  }
+    setlist([...list, getinputtext]);
+    setinputtext('');
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}> My todo app</Text>
@@ -18,23 +24,23 @@ export default function App() {
         <TextInput
           style={styles.textinput}
           placeholder=" Enter Item"
-          onChangeText={text=>setinputtext(text)}
+          onChangeText={(text) => setinputtext(text)}
           value={getinputtext}
         ></TextInput>
-        <Button
-        onPress={additem}
-         title="add" />
+        <Button onPress={additem} title="add" />
       </View>
       <View>
         <Text style={{ fontSize: 26 }}>{getinputtext}</Text>
       </View>
       <View>
-      <ScrollView>
-      {list.map((item)=> <Text> {item} </Text> )}
-    </ScrollView>
+        <ScrollView>
+          {list.map((item) => (
+            <View key={item}>
+              <Text> {item} </Text>
+            </View>
+          ))}
+        </ScrollView>
       </View>
-    
-
     </View>
   );
 }

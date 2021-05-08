@@ -1,11 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, Button, TextInput, View } from "react-native";
+import { StyleSheet, Text, Button, TextInput, View ,ScrollView} from "react-native";
 
 export default function App() {
   const [getinputtext, setinputtext] = useState("DummyText");
+  const [list,setlist]=useState(['item1','item2'])
   const additem=()=>{
-    console.log("running")
+    console.log(getinputtext);
+    setinputtext('')
 
   }
   return (
@@ -16,6 +18,7 @@ export default function App() {
           style={styles.textinput}
           placeholder=" Enter Item"
           onChangeText={text=>setinputtext(text)}
+          value={getinputtext}
         ></TextInput>
         <Button
         onPress={additem}
@@ -24,7 +27,13 @@ export default function App() {
       <View>
         <Text style={{ fontSize: 26 }}>{getinputtext}</Text>
       </View>
-
+    <ScrollView>
+      {list.map((item)=>{
+        <Text>
+          {item}
+        </Text>
+      })}
+    </ScrollView>
       <StatusBar style="auto" />
     </View>
   );

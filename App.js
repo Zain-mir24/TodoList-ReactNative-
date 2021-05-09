@@ -11,10 +11,10 @@ import {
 
 export default function App() {
   const [getinputtext, setinputtext] = useState('');
-  const [list, setlist] = useState(["item1", "item2"]);
+  const [list, setlist] = useState([]);
   const additem = () => {
     console.log(getinputtext);
-    setlist([...list, getinputtext]);
+    setlist([...list, {key:Math.random().toString() ,data:getinputtext}]);
     setinputtext('');
   };
   return (

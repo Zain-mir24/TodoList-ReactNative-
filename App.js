@@ -7,15 +7,25 @@ import {
   TextInput,
   View,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 
 export default function App() {
-  const [getinputtext, setinputtext] = useState('');
+  const [getinputtext, setinputtext] = useState("");
   const [list, setlist] = useState([]);
   const additem = () => {
     console.log(getinputtext);
-    setlist([...list, {key:Math.random().toString() ,data:getinputtext}]);
-    setinputtext('');
+    setlist([
+      ...list,
+      {
+        key: Math.random().toString(), //we created an object and retrieved list from there
+        data: getinputtext,
+      },
+    ]);
+    setinputtext("");
+  };
+  const removeItem = (itemkey) => {
+      list.filter(item=>item.key != itemkey)
   };
   return (
     <View style={styles.container}>
@@ -35,9 +45,15 @@ export default function App() {
       <View>
         <ScrollView>
           {list.map((item) => (
-            <View key={item}>
-              <Text> {item} </Text>
-            </View>
+            <TouchableOpacity
+              key={item.key}
+              activeOpacity={0.2}
+              onPress={() => removeItem(item.key)}
+            >
+              <View>
+                <Text> data: {item.data} </Text>
+              </View>
+            </TouchableOpacity>
           ))}
         </ScrollView>
       </View>

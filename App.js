@@ -25,7 +25,8 @@ export default function App() {
     setinputtext("");
   };
   const removeItem = (itemkey) => {
-      list.filter(item=>item.key != itemkey)
+     const item= list.filter(item=>item.key != itemkey)
+     list(item)
   };
   return (
     <View style={styles.container}>

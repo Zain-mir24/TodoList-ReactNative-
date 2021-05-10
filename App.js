@@ -1,9 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
+import Button from "./components/Button"
 import {
   StyleSheet,
   Text,
-  Button,
+ 
   TextInput,
   View,
   ScrollView,
@@ -38,14 +39,7 @@ export default function App() {
           onChangeText={(text) => setinputtext(text)}
           value={getinputtext}
         ></TextInput>
-        <TouchableOpacity
-        onPress={additem} >
-          <View style={{ backgroundColor:"blue",padding:10,borderRadius:20,marginTop:20}} >
-            <Text style={{color:"white" ,fontSize:20}}>
-              Add
-            </Text>
-          </View>
-        </TouchableOpacity>
+        <Button text="add" onPress={additem} />
         {/* <Button  title="add" /> */}
       </View>
       <View>

@@ -26,7 +26,7 @@ export default function App() {
   };
   const removeItem = (itemkey) => {
      const item= list.filter(item=>item.key != itemkey)
-     list(item)
+     setlist(item)
   };
   return (
     <View style={styles.container}>
@@ -53,6 +53,11 @@ export default function App() {
             >
               <View>
                 <Text> data: {item.data} </Text>
+              </View>
+              <View>
+                <Text>
+                  X
+                </Text>
               </View>
             </TouchableOpacity>
           ))}

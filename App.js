@@ -49,15 +49,17 @@ export default function App() {
             <TouchableOpacity
               key={item.key}
               activeOpacity={0.2}
-              onPress={() => removeItem(item.key)}
+              
             >
               <View style={styles.item}>
                 <Text style={styles.data}>  {item.data} </Text>
-                <View>
+                <TouchableOpacity onPress={() => removeItem(item.key)}> 
+                <View style={{backgroundColor:"grey",borderRadius:50}} >
                 <Text style={styles.data}>
                   X
                 </Text>
               </View>
+              </TouchableOpacity>
               </View>
               
             </TouchableOpacity>
@@ -70,9 +72,10 @@ export default function App() {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 50,
-    backgroundColor: "yellow",
+    fontSize: 40,
+    backgroundColor: "orange",
     paddingBottom: 10,
+    borderRadius:10
   },
   container: {
     flex: 1,
@@ -89,19 +92,24 @@ const styles = StyleSheet.create({
     borderColor: "orange",
     borderBottomWidth: 2,
     width: "70%",
-
     fontSize: 16,
     padding: 10,
   },
   data:{
-  fontSize:36,
+  fontSize:26,
   color:"white"
-
   }
   ,ScrollView:{
     width:'100%'
   },
   item:{
-    backgroundColor:"orange"
+    backgroundColor:"orange",
+    width:'80%',
+    flexDirection:"row",
+    justifyContent:"space-between",
+    padding:10,
+    margin:5,
+    alignSelf:"center",
+    borderRadius:10
   }
 });

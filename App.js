@@ -38,7 +38,15 @@ export default function App() {
           onChangeText={(text) => setinputtext(text)}
           value={getinputtext}
         ></TextInput>
-        <Button onPress={additem} title="add" />
+        <TouchableOpacity
+        onPress={additem} >
+          <View style={{ backgroundColor:"blue",padding:10,borderRadius:20,marginTop:20}} >
+            <Text style={{color:"white" ,fontSize:20}}>
+              Add
+            </Text>
+          </View>
+        </TouchableOpacity>
+        {/* <Button  title="add" /> */}
       </View>
       <View>
         <Text style={{ fontSize: 26 }}>{getinputtext}</Text>
@@ -104,7 +112,7 @@ const styles = StyleSheet.create({
   },
   item:{
     backgroundColor:"orange",
-    width:'80%',
+    width:'70%',
     flexDirection:"row",
     justifyContent:"space-between",
     padding:10,

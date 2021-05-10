@@ -44,21 +44,22 @@ export default function App() {
         <Text style={{ fontSize: 26 }}>{getinputtext}</Text>
       </View>
       <View>
-        <ScrollView>
+        <ScrollView style={styles.ScrollView}>
           {list.map((item) => (
             <TouchableOpacity
               key={item.key}
               activeOpacity={0.2}
               onPress={() => removeItem(item.key)}
             >
-              <View>
-                <Text> data: {item.data} </Text>
-              </View>
-              <View>
-                <Text>
+              <View style={styles.item}>
+                <Text style={styles.data}>  {item.data} </Text>
+                <View>
+                <Text style={styles.data}>
                   X
                 </Text>
               </View>
+              </View>
+              
             </TouchableOpacity>
           ))}
         </ScrollView>
@@ -92,4 +93,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     padding: 10,
   },
+  data:{
+  fontSize:36,
+  color:"white"
+
+  }
+  ,ScrollView:{
+    width:'100%'
+  },
+  item:{
+    backgroundColor:"orange"
+  }
 });

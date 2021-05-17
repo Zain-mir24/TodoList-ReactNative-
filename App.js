@@ -47,14 +47,14 @@ export default function App() {
       </View>
       <View>
         <ScrollView style={styles.ScrollView}>
-          {list.map((item) => (
+          {list.map((item,index) => (
             <TouchableOpacity
               key={item.key}
               activeOpacity={0.2}
               
             >
               <View style={styles.item}>
-                <Text style={styles.data}>  {item.data} </Text>
+                <Text style={styles.data}> {index}#: {item.data} </Text>
                 <TouchableOpacity onPress={() => removeItem(item.key)}> 
                 <View style={{backgroundColor:"grey",borderRadius:50}} >
                 <Text style={styles.data}>

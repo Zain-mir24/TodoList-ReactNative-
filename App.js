@@ -4,7 +4,7 @@ import Button from "./components/Button"
 import {
   StyleSheet,
   Text,
- 
+
   TextInput,
   View,
   ScrollView,
@@ -51,11 +51,11 @@ export default function App() {
             <TouchableOpacity
               key={item.key}
               activeOpacity={0.2}
-              
+
             >
               <View style={styles.item}>
                 <Text style={styles.data}> {index}#: {item.data} </Text>
-                <TouchableOpacity onPress={() => removeItem(item.key)}> 
+                <TouchableOpacity onPress={() => removeItem(item.key)}>
                 <View style={{backgroundColor:"grey",borderRadius:50}} >
                 <Text style={styles.data}>
                   X
@@ -63,7 +63,7 @@ export default function App() {
               </View>
               </TouchableOpacity>
               </View>
-              
+
             </TouchableOpacity>
           ))}
         </ScrollView>
